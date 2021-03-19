@@ -5,7 +5,7 @@ Example using upload image to S3 bucket in localhost with [Localstack](https://g
 ## Configurations:
 
 ### disclaimer
-19/03/2021 - localstack ports was unified to use localhost:4666
+19/03/2021 - localstack ports was unified to use localhost:4566
 
 ### URL services
 * url service: http://localhost:8055/
