@@ -1,5 +1,5 @@
 1. url service: http://localhost:8055/
-2. url s3: 
+2. url s3: http://localhost:4566/
 3. status localstack: http://localhost:4566/
 
 ### start environment
