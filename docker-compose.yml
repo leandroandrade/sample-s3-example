@@ -12,3 +12,16 @@ services:
       - DATA_DIR=/tmp/localstack/data
     volumes:
       - './.localstack:/tmp/localstack'
+      
+      
+#version: '3'
+#services:
+#  localstack:
+#    image: localstack/localstack-light
+#    ports:
+#      - "4566:4566"
+#    environment:
+#      - DEBUG=1
+#      - DEFAULT_REGION=sa-east-1
+#      - SERVICES=sqs,dynamodb
+#      - SERVICES=sqs,dynamodb,s3,kms,events,sts,iam
