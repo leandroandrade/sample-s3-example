@@ -10,8 +10,8 @@ async function main(filename) {
     const now = new Date()
     const newFilename = `test-image-${now.toISOString()}.jpg`
 
-    await uploadFile(fileStream, newFilename);
-    console.log(`File ${filename} as sent sucessfully!`);
+    const result = await uploadFile(fileStream, newFilename);
+    console.log(`File ${filename} as sent sucessfully!`, result);
 }
 
 main('test-image.jpg')
