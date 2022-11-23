@@ -4,24 +4,22 @@ Example using upload image to S3 bucket in localhost with [Localstack](https://g
 
 ## Configurations:
 
-URL services:
-* health: http://localhost:4566/health
-
 ### start environment
 ```
 docker-compose up -d
 ```
 
+URL services:
+* health: http://localhost:4566/health
+
 ### configure aws
 ```
 aws configure
 ```
-1. access key: 123
-2. secret key: xyz
+1. access key: fakeAccessKeyId
+2. secret key: fakeSecretAccessKey
 3. region: us-east-1
 4. default output format: json
-
-* Localstack do not use the credencials configured but it`s verify if then exists.
 
 Install aws cli:
 ```sh
@@ -45,12 +43,12 @@ awslocal s3api list-buckets
 ```
 
 Configure acl to readable bucket:
-```
+```shell
 aws --endpoint-url=http://localhost:4566 s3api put-bucket-acl --bucket demo-bucket --acl public-read
 awslocal s3api put-bucket-acl --bucket demo-bucket --acl public-read
 ```
 
 ### run
 ```
-node test-upload.js
+node main.js
 ```
