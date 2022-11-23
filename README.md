@@ -4,14 +4,7 @@ Example using upload image to S3 bucket in localhost with [Localstack](https://g
 
 ## Configurations:
 
-### disclaimer
-19/03/2021 - localstack ports was unified to use localhost:4566
-
-### URL services
-* url service: http://localhost:8055/
-* url s3: http://localhost:4566/
-* status localstack: http://localhost:4566/
-
+URL services:
 * health: http://localhost:4566/health
 
 ### start environment
@@ -61,9 +54,3 @@ awslocal s3api put-bucket-acl --bucket demo-bucket --acl public-read
 ```
 node test-upload.js
 ```
-
-### References
-* https://dev.to/goodidea/how-to-fake-aws-locally-with-localstack-27me
-* https://github.com/good-idea/localstack-demo
-* https://medium.com/@gusiol/desenvolvimento-na-aws-s3-e-sqs-sem-custos-com-localstack-f525d015ca48
-* https://github.com/guizoxxv/localstack-test

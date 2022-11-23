@@ -1,6 +1,6 @@
-const AWS = require('aws-sdk')
+const aws = require('aws-sdk')
 
-const s3client = new AWS.S3({
+const s3client = new aws.S3({
     /**
      * If credential are configured using aws configure, credentials object is not necessary.
      */
@@ -22,7 +22,6 @@ const s3client = new AWS.S3({
      */
     s3ForcePathStyle: true,
 })
-
 
 async function uploadFile(data, fileName) {
     return new Promise((resolve, reject) => {
