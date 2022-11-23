@@ -1,27 +1,18 @@
 version: '3.2'
 services:
   localstack:
-    image: localstack/localstack-full
-    container_name: localstack_demo
+    image: localstack/localstack
+    container_name: localstack
+    network_mode: bridge
     ports:
-      - '4563-4599:4563-4599'
-      - '8055:8080'
+      - '127.0.0.1:4566:4566'
+      - '127.0.0.1:4510-4559:4510-4559'
     environment:
-      - SERVICES=s3
       - DEBUG=1
-      - DATA_DIR=/tmp/localstack/data
+      - PERSISTENCE=1
+      - AWS_DEFAULT_REGION=sa-east-1
+      - AWS_ACCESS_KEY_ID=fakeAccessKeyId
+      - AWS_SECRET_ACCESS_KEY=fakeSecretAccessKey
+      - DEFAULT_REGION=sa-east-1
     volumes:
-      - './.localstack:/tmp/localstack'
-      
-      
-#version: '3'
-#services:
-#  localstack:
-#    image: localstack/localstack-light
-#    ports:
-#      - "4566:4566"
-#    environment:
-#      - DEBUG=1
-#      - DEFAULT_REGION=sa-east-1
-#      - SERVICES=sqs,dynamodb
-#      - SERVICES=sqs,dynamodb,s3,kms,events,sts,iam
+      - './.localstack:/var/lib/localstack'
