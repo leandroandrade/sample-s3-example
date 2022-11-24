@@ -52,3 +52,6 @@ awslocal s3api put-bucket-acl --bucket demo-bucket --acl public-read
 ```
 node main.js
 ```
+
+## References
+* https://www.zup.com.br/blog/localstack-simule-ambientes-aws-localmente
